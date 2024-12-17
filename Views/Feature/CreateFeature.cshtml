@@ -1,0 +1,35 @@
+﻿@model YummyProject.Models.Feature
+@{
+    ViewBag.Title = "CreateFeature";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Yeni Öne Çıkan Alan Ekleme Sayfası</h2>
+    
+<form method="post">
+
+    <label>Resim Url</label>
+    @Html.TextAreaFor(a => a.ImageUrl, new { @class = "form-control" })
+    <div class="text-danger">@Html.ValidationMessageFor(a => a.ImageUrl)</div>
+    <br />
+
+    <label>Başlık</label>
+    @Html.TextAreaFor(a => a.Title, new { @class = "form-control" })
+    <div class="text-danger">@Html.ValidationMessageFor(a => a.Title)</div>
+    <br />
+
+    <label>Açıklama</label>
+    @Html.TextAreaFor(a => a.Description, 1, 4, new { @class = "form-control" })
+    <div class="text-danger">@Html.ValidationMessageFor(a => a.Description)</div>
+    <br />
+
+    <label>Video Url</label>
+    @Html.TextAreaFor(a => a.VideoUrl, new { @class = "form-control" })
+    <div class="text-danger">@Html.ValidationMessageFor(a => a.VideoUrl)</div>
+    <br />
+
+    <div class="text-danger">@ViewBag.error</div>
+    <button class="btn btn-primary">Kaydet</button>
+
+</form>
+
