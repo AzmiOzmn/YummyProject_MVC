@@ -32,14 +32,14 @@ namespace YummyProject.Controllers
             {
                 return View(model);
             }
+
             context.Features.Add(model);
-          int result =  context.SaveChanges();
-            if (result==0)
+            int result = context.SaveChanges();
+            if (result == 0)
             {
                 ViewBag.error = "Değerler kaydedilirken bir hata ile karşılaşıldı";
                 return View(model);
             }
-            
             return RedirectToAction("Index");
         }
 
