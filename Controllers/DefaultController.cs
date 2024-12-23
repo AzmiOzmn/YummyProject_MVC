@@ -14,14 +14,11 @@ namespace YummyProject.Controllers
         public ActionResult Index()
         {
 
-            ViewBag.soupCount = context.Products.Count(x => x.Category.CategoryName == "Çorbalar");
-            ViewBag.mostExpensive = context.Products.OrderByDescending(x => x.Price).Select(x => x.ProductName).FirstOrDefault();
+            ViewBag.SoupCount = context.Products.Count(x => x.Category.CategoryName == "Çorbalar");
+            ViewBag.MostExpensive = context.Products.OrderByDescending(x => x.Price).Select(x => x.ProductName).FirstOrDefault();
             ViewBag.avgPrice = context.Products.Average(x => x.Price);
-            ViewBag.cheapestPrice = context.Products.OrderBy(x => x.Price).Select(y => y.ProductName).FirstOrDefault();
-
+            ViewBag.CheapestPrice = context.Products.OrderBy(x => x.Price).Select(x => x.ProductName).FirstOrDefault();
             return View();
-            
-
         }
 
         public PartialViewResult DefaultFeature()
@@ -65,5 +62,28 @@ namespace YummyProject.Controllers
             var values = context.Events.ToList();
             return PartialView(values);
         }
+
+        public PartialViewResult DefaultPhotoGallery()
+        {
+            var values = context.PhotoGalleries.ToList();
+            return PartialView(values);
+        }
+
+        [HttpGet]
+
+        public ActionResult Booking()
+        {
+            return PartialView();
+        }
+
+        [HttpPost]
+        public ActionResult Booking(Booking model)
+        {
+            model.IsApproved = false;
+            context.Bookings.Add(model);
+            context.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
     }
 }
