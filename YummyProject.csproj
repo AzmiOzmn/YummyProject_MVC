@@ -154,6 +154,10 @@
     <Compile Include="Migrations\202412191923032_mig_admin_table.Designer.cs">
       <DependentUpon>202412191923032_mig_admin_table.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202412222349428_update-event-decimaltoint.cs" />
+    <Compile Include="Migrations\202412222349428_update-event-decimaltoint.Designer.cs">
+      <DependentUpon>202412222349428_update-event-decimaltoint.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\About.cs" />
     <Compile Include="Models\Admin.cs" />
@@ -362,6 +366,10 @@
     <Content Include="Views\AdminLayout\Index.cshtml" />
     <Content Include="Views\Dashboard\Index.cshtml" />
     <Content Include="Views\Default\DefaultProduct.cshtml" />
+    <Content Include="Views\Default\DefaultService.cshtml" />
+    <Content Include="Views\Default\DefaultTestimonial.cshtml" />
+    <Content Include="Views\Default\DefaultChef.cshtml" />
+    <Content Include="Views\Default\DefaultEvent.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -405,6 +413,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202412191923032_mig_admin_table.resx">
       <DependentUpon>202412191923032_mig_admin_table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202412222349428_update-event-decimaltoint.resx">
+      <DependentUpon>202412222349428_update-event-decimaltoint.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
