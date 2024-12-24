@@ -1,0 +1,12 @@
+﻿@model  List<YummyProject.Models.SocialMedia>
+
+<div class="col-lg-3 col-md-6">
+    <h4>Bizi Takip Edin</h4>
+    <div class="social-links d-flex">
+        @foreach (var item in Model)
+        {
+
+            <a href="@item.Url"><i class="@item.Icon"></i></a>
+        }
+    </div>
+</div>

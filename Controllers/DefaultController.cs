@@ -8,6 +8,7 @@ using YummyProject.Models;
 
 namespace YummyProject.Controllers
 {
+    [AllowAnonymous]
     public class DefaultController : Controller
     {
         YummyContext context = new YummyContext();
