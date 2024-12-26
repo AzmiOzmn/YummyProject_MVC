@@ -43,11 +43,12 @@ namespace YummyProject.Controllers
             
         }
 
+        
         public ActionResult SingOut()
         {
             FormsAuthentication.SignOut();
             Session.Abandon();
-            return RedirectToAction("SignIn","Login");
+            return RedirectToAction("SignIn");
         }
     }
 }

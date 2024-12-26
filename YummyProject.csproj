@@ -129,12 +129,15 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Context\YummyContext.cs" />
+    <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\AdminLayoutController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\FeatureController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\ServiceController.cs" />
     <Compile Include="Controllers\UILayoutController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -499,6 +502,18 @@
     <Content Include="Templates\login-form-02\scss\style.scss" />
     <Content Include="Views\Login\SignIn.cshtml" />
     <Content Include="Views\UILayout\SocialMedias.cshtml" />
+    <Content Include="Views\Default\DefaultContact.cshtml" />
+    <Content Include="Views\Default\Message.cshtml" />
+    <Content Include="Views\Feature\UpdateFeature.cshtml" />
+    <Content Include="Views\About\Index.cshtml" />
+    <Content Include="Views\About\CreateAbout.cshtml" />
+    <Content Include="Views\About\UpdateAbout.cshtml" />
+    <Content Include="Views\Service\Index.cshtml" />
+    <Content Include="Views\Service\CreateService.cshtml" />
+    <Content Include="Views\Service\UpdateService.cshtml" />
+    <Content Include="Views\Product\Index.cshtml" />
+    <Content Include="Views\Product\CreateProduct.cshtml" />
+    <Content Include="Views\Product\UpdateProduct.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

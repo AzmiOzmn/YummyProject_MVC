@@ -1,0 +1,43 @@
+﻿@model YummyProject.Models.About
+@{
+    ViewBag.Title = "UpdateAbout";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Hakkımızda Güncelle</h2>
+<br />
+<form method="post">
+    @Html.HiddenFor(x => x.AboutId)
+
+    <label>Foto Url</label>
+    @Html.TextAreaFor(a => a.ImageUrl, new { @class = "form-control" })
+    <br />
+    <label>Item1</label>
+    @Html.TextAreaFor(a => a.Item1, new { @class = "form-control" })
+    <br />
+    <label>Item2</label>
+    @Html.TextAreaFor(a => a.Item2, new { @class = "form-control" })
+    <br />
+    <label>Item3</label>
+    @Html.TextAreaFor(a => a.Item3, new { @class = "form-control" })
+    <br />
+    <label>Açıklama</label>
+    @Html.TextAreaFor(a => a.Description, new { @class = "form-control" })
+    <br />
+    <label>Video Url</label>
+    @Html.TextAreaFor(a => a.VideoUrl, new { @class = "form-control" })
+    <br />
+    <label>Telefon</label>
+    @Html.TextAreaFor(a => a.PhoneNumber, new { @class = "form-control" })
+    <br />
+    <label>Foto Url2</label>
+    @Html.TextAreaFor(a => a.ImageUrl2, new { @class = "form-control" })
+    <br />
+
+
+    <br>
+    <button class="btn btn-outline-primary">Güncelle</button>
+
+</form>
+
+

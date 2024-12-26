@@ -1,0 +1,32 @@
+﻿@model YummyProject.Models.Feature
+@{
+    ViewBag.Title = "UpdateFeature";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+ <h2>Güncelleme Sayfası</h2>
+
+ <form method="post">
+     @Html.HiddenFor(x => x.FeatureId)
+
+     <label>Fotoğraf Url</label>
+     @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control" })
+     <br>
+     <label>Başlık</label>
+     @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+     <br>
+     <label>Açıklama</label>
+     @Html.TextBoxFor(x => x.Description, new { @class = "form-control" })
+     <br>
+     <label>Video Url</label>
+     @Html.TextBoxFor(x => x.VideoUrl, new { @class = "form-control" })
+     <br>
+
+
+     <br>
+     <button class="btn btn-outline-primary">Güncelle</button>
+
+ </form>
+
+
+

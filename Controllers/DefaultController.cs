@@ -15,10 +15,10 @@ namespace YummyProject.Controllers
         public ActionResult Index()
         {
 
-            ViewBag.SoupCount = context.Products.Count(x => x.Category.CategoryName == "Çorbalar");
-            ViewBag.MostExpensive = context.Products.OrderByDescending(x => x.Price).Select(x => x.ProductName).FirstOrDefault();
+            ViewBag.chefCount = context.Chefs.Count();
+            ViewBag.eventCount = context.Events.Count();
             ViewBag.avgPrice = context.Products.Average(x => x.Price);
-            ViewBag.CheapestPrice = context.Products.OrderBy(x => x.Price).Select(x => x.ProductName).FirstOrDefault();
+            ViewBag.productCount = context.Products.Count();
             return View();
         }
 
@@ -82,6 +82,27 @@ namespace YummyProject.Controllers
         {
             model.IsApproved = false;
             context.Bookings.Add(model);
+            context.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        public PartialViewResult DefaultContact()
+        {
+            var values = context.ContactInfos.ToList();
+            return PartialView(values);
+        }
+
+        [HttpGet]
+        public ActionResult Message()
+        {
+            return PartialView();
+        }
+
+        [HttpPost]
+        public ActionResult Message(Message model)
+        {
+            model.IsRead = false;
+            context.Messages.Add(model);
             context.SaveChanges();
             return RedirectToAction("Index");
         }

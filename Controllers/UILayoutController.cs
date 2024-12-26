@@ -7,11 +7,13 @@ using YummyProject.Context;
 
 namespace YummyProject.Controllers
 {
+    [AllowAnonymous]
     public class UILayoutController : Controller
     {
-        YummyContext context  = new YummyContext();
+        YummyContext context = new YummyContext();
         public ActionResult Index()
         {
+            
             return View();
         }
 
@@ -20,5 +22,7 @@ namespace YummyProject.Controllers
             var values = context.SocialMedias.ToList();
             return PartialView(values);
         }
+
+       
     }
 }

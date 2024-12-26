@@ -53,16 +53,22 @@ namespace YummyProject.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult UpdateFeature()
+        [HttpGet]
+        public ActionResult UpdateFeature(int id)
         {
-            return View();
+            var values = context.Features.Find(id);
+            return View(values);
         }
 
 
         [HttpPost]
         public ActionResult UpdateFeature(Feature model)
         {
-            context.Features.Add(model);
+            var values = context.Features.Find(model.FeatureId);
+            values.ImageUrl = model.ImageUrl;
+            values.Title = model.Title;
+            values.Description = model.Description;
+            values.VideoUrl = model.VideoUrl;
             context.SaveChanges();
             return RedirectToAction("Index");
         }
