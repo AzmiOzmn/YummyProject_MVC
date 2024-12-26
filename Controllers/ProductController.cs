@@ -28,7 +28,9 @@ namespace YummyProject.Controllers
             {
                 throw new Exception("Veritabanında hiçbir kategori bulunamadı.");
             }
+
         }
+        
 
         public ActionResult Index()
         {
