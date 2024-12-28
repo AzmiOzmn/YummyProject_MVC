@@ -13,14 +13,25 @@ namespace YummyProject.Controllers
         YummyContext context = new YummyContext();
         public ActionResult Index()
         {
-            var chefs = context.Chefs.ToList();  // Yalnızca şefler
-            return View(chefs);  // Verileri View'a gönderiyoruz
+            var values = context.Chefs.ToList();
+            return View(values);
         }
-
 
         public ActionResult CreateChef()
         {
-            return View();
+            // Boş bir Chef modeli oluştur ve ChefSocials listesini başlat
+            var model = new Chef
+            {
+                ChefSocials = new List<ChefSocial>
+        {
+            new ChefSocial { SocialMediaName = "Twitter" },
+            new ChefSocial { SocialMediaName = "Facebook" },
+            new ChefSocial { SocialMediaName = "Instagram" },
+            new ChefSocial { SocialMediaName = "LinkedIn" }
+        }
+            };
+
+            return View(model);
         }
 
         [HttpPost]
@@ -29,30 +40,26 @@ namespace YummyProject.Controllers
             if (ModelState.IsValid)
             {
                 // Şef bilgilerini veritabanına ekle
-                context.Chefs.Add(model);
+                var values = context.Chefs.Add(model);
                 context.SaveChanges();  // Şef kaydedildi
 
-                // Sosyal medya bilgilerini yalnızca URL doluysa ekle
-                if (model.ChefSocials != null)
+                // Sosyal medya bilgilerini sadece URL doluysa ekle
+                foreach (var social in model.ChefSocials)
                 {
-                    foreach (var social in model.ChefSocials)
+                    if (!string.IsNullOrEmpty(social.Url))  // URL boş değilse
                     {
-                        if (!string.IsNullOrEmpty(social.Url))  // URL boş değilse
-                        {
-                            social.ChefId = model.ChefId;  // Şef ile ilişkilendir
-                            context.ChefSocials.Add(social);  // Sosyal medya kaydını ekle
-                        }
+                        social.ChefId = model.ChefId;  // Şef ile ilişkilendir
+                        context.ChefSocials.Add(social);  // Sosyal medya kaydını ekle
                     }
-
-                    context.SaveChanges();  // Sosyal medya bilgilerini kaydet
                 }
+
+                context.SaveChanges();  // Sosyal medya bilgilerini kaydet
+
+                return RedirectToAction("Index");
             }
 
-            return RedirectToAction("Index");
+            return View(model); // Hatalıysa formu geri döndür
         }
-
-
-
 
 
         public ActionResult DeleteChef(int id)

@@ -1,6 +1,10 @@
 ﻿@model YummyProject.Models.Chef
 
 @{
+    int count = 1;
+}
+
+@{
     ViewBag.Title = "CreateChef";
     Layout = "~/Views/AdminLayout/Index.cshtml";
 }
@@ -23,6 +27,19 @@
     <label>Açıklama</label>
     @Html.TextAreaFor(a => a.Description, new { @class = "form-control" })
     <br />
+
+    @if (Model.ChefSocials != null && Model.ChefSocials.Count > 0)
+    {
+        @*<h4>Sosyal Medya Adları</h4>*@
+        for (int i = 0; i < Model.ChefSocials.Count; i++)
+        {
+            @Html.HiddenFor(a => a.ChefSocials[i].SocialMediaName)
+        }
+    }
+    else
+    {
+        <p>Sosyal medya bilgisi bulunamadı.</p>
+    }
 
     <h4>Sosyal Medya Hesapları</h4>
 

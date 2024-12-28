@@ -1,0 +1,51 @@
+﻿@model List<YummyProject.Models.Booking>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Rezervasyonlar</h2>
+
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>#</th>
+        <th>Ad Soyad</th>
+        <th>Email</th>
+        <th>Telefon</th>
+        <th>Tarih</th>
+        <th>Kişi Sayısı</th>
+        <th>Mesaj</th>
+        <th>Onay Durumu</th>
+        <th>Onayla</th>
+        <th>Reddet</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.BookingId</td>
+            <td>@item.Name</td>
+            <td>@item.Email</td>
+            <td>@item.PhonenNumber</td>
+            <td>@item.BookingDate.ToShortDateString()</td>
+            <td>@item.PersonCount</td>
+            <td>@item.MessageContent</td>
+            <td>
+                @if (item.IsApproved)
+                {
+                    <span class="badge badge-success" style="background-color: green; color: white;">Onaylandı</span>
+                }
+                else if (item.IsApproved == false && item.BookingDate <= DateTime.Now)
+                {
+            <span class="badge badge-danger" style="background-color: red; color: white;">Reddedildi</span> <!-- Reddedildi durumu için kırmızı renk -->
+                }
+                else
+                {
+            <span class="badge badge-info" style="background-color: gray; color: white;">Beklemede</span> <!-- Beklemede için sarı renk -->
+                }
+            </td>
+            <td><a href="@Url.Action("TrueBooking", "Booking", new { id = item.BookingId })" class="btn btn-success">Onayla</a></td>
+            <td><a href="@Url.Action("FalseBooking", "Booking", new { id = item.BookingId })" class="btn btn-danger">Reddet</a></td>
+        </tr>
+    }
+</table>

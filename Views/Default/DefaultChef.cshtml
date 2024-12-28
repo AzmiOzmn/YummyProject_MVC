@@ -8,41 +8,62 @@
 
     <div class="container">
         <div class="row gy-4">
-            @foreach (var item in Model)
+            @foreach (var chef in Model)
             {
                 <div class="col-lg-4 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
                     <div class="team-member">
                         <div class="member-img">
-                            <img src="@item.ImageUrl" class="img-fluid" alt="">
+                            <img src="@chef.ImageUrl" class="img-fluid" alt="Şef Fotoğrafı">
 
                             <div class="social">
-                                @foreach (var social in item.ChefSocials.Where(s => !string.IsNullOrEmpty(s.Url)))
-                                {
-                                    <a href="@social.Url" target="_blank">
-                                        @if (social.SocialMediaName == "Twitter")
+                                @{
+                                    // İkonları bir kez göstermek için her sosyal medya adını filtrele
+                                    var socialMediaIcons = chef.ChefSocials?
+                                        .Where(s => !string.IsNullOrEmpty(s.Url))
+                                        .GroupBy(s => s.SocialMediaName)
+                                        .Select(g => g.First())
+                                        .ToList();
+
+                                    if (socialMediaIcons != null && socialMediaIcons.Any())
+                                    {
+                                        foreach (var social in socialMediaIcons)
                                         {
-                                            <i class="bi bi-twitter"></i>
+                                            string iconClass = "";
+
+                                            // Sosyal medya türüne göre ikon belirle
+                                            if (social.SocialMediaName == "Twitter")
+                                            {
+                                                iconClass = "bi bi-twitter";
+                                            }
+                                            else if (social.SocialMediaName == "Facebook")
+                                            {
+                                                iconClass = "bi bi-facebook";
+                                            }
+                                            else if (social.SocialMediaName == "Instagram")
+                                            {
+                                                iconClass = "bi bi-instagram";
+                                            }
+                                            else if (social.SocialMediaName == "LinkedIn")
+                                            {
+                                                iconClass = "bi bi-linkedin";
+                                            }
+                                            else
+                                            {
+                                                iconClass = "bi bi-link"; // Varsayılan ikon
+                                            }
+
+                                            <a href="@social.Url" target="_blank">
+                                                <i class="@iconClass"></i>
+                                            </a>
                                         }
-                                        else if (social.SocialMediaName == "Facebook")
-                                        {
-                                            <i class="bi bi-facebook"></i>
-                                        }
-                                        else if (social.SocialMediaName == "Instagram")
-                                        {
-                                            <i class="bi bi-instagram"></i>
-                                        }
-                                        else if (social.SocialMediaName == "LinkedIn")
-                                        {
-                                            <i class="bi bi-linkedin"></i>
-                                        }
-                                    </a>
+                                    }
                                 }
                             </div>
                         </div>
                         <div class="member-info">
-                            <h4>@item.Name</h4>
-                            <span>@item.Title</span>
-                            <p>@item.Description</p>
+                            <h4>@chef.Name</h4>
+                            <span>@chef.Title</span>
+                            <p>@chef.Description</p>
                         </div>
                     </div>
                 </div>

@@ -131,11 +131,13 @@
     <Compile Include="Context\YummyContext.cs" />
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\AdminLayoutController.cs" />
+    <Compile Include="Controllers\BookingController.cs" />
     <Compile Include="Controllers\ChefController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\EventController.cs" />
     <Compile Include="Controllers\FeatureController.cs" />
+    <Compile Include="Controllers\GalleryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
@@ -169,6 +171,14 @@
     <Compile Include="Migrations\202412241842290_mig_socialmedia_table_added.cs" />
     <Compile Include="Migrations\202412241842290_mig_socialmedia_table_added.Designer.cs">
       <DependentUpon>202412241842290_mig_socialmedia_table_added.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202412282233210_update-bool.cs" />
+    <Compile Include="Migrations\202412282233210_update-bool.Designer.cs">
+      <DependentUpon>202412282233210_update-bool.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202412282240413_bool-false.cs" />
+    <Compile Include="Migrations\202412282240413_bool-false.Designer.cs">
+      <DependentUpon>202412282240413_bool-false.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\About.cs" />
@@ -528,6 +538,10 @@
     <Content Include="Views\Chef\Index.cshtml" />
     <Content Include="Views\Chef\CreateChef.cshtml" />
     <Content Include="Views\Chef\UpdateChef.cshtml" />
+    <Content Include="Views\Booking\Index.cshtml" />
+    <Content Include="Views\Gallery\Index.cshtml" />
+    <Content Include="Views\Gallery\CreateGallery.cshtml" />
+    <Content Include="Views\Gallery\UpdateGallery.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -577,6 +591,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202412241842290_mig_socialmedia_table_added.resx">
       <DependentUpon>202412241842290_mig_socialmedia_table_added.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202412282233210_update-bool.resx">
+      <DependentUpon>202412282233210_update-bool.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202412282240413_bool-false.resx">
+      <DependentUpon>202412282240413_bool-false.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

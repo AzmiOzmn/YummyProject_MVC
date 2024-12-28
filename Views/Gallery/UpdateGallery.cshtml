@@ -1,0 +1,21 @@
+﻿@model YummyProject.Models.PhotoGallery
+@{
+    ViewBag.Title = "UpdateGallery";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Fotoğraf Güncelle</h2>
+
+<form method="post">
+    @Html.HiddenFor(x => x.PhotoGalleryId)
+
+    <label>Foto Url</label>
+    @Html.TextAreaFor(a => a.ImageUrl, new { @class = "form-control" })
+    <br />
+
+    <br>
+    <button class="btn btn-outline-primary">Güncelle</button>
+
+</form>
+
+
