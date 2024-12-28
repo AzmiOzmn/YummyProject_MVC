@@ -1,0 +1,50 @@
+﻿@model YummyProject.Models.Chef
+
+@{
+    ViewBag.Title = "CreateChef";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Şef Kaydet</h2>
+
+<form method="post">
+    <label>Ad Soyad</label>
+    @Html.TextBoxFor(a => a.Name, new { @class = "form-control" })
+    <br />
+
+    <label>Fotoğraf URL</label>
+    @Html.TextBoxFor(a => a.ImageUrl, new { @class = "form-control" })
+    <br />
+
+    <label>Ünvan</label>
+    @Html.TextBoxFor(a => a.Title, new { @class = "form-control" })
+    <br />
+
+    <label>Açıklama</label>
+    @Html.TextAreaFor(a => a.Description, new { @class = "form-control" })
+    <br />
+
+    <h4>Sosyal Medya Hesapları</h4>
+
+    <label>Twitter</label>
+    <input type="text" name="ChefSocials[0].Url" class="form-control" placeholder="Twitter URL" />
+    <input type="hidden" name="ChefSocials[0].SocialMediaName" value="Twitter" />
+    <br />
+
+    <label>Facebook</label>
+    <input type="text" name="ChefSocials[1].Url" class="form-control" placeholder="Facebook URL" />
+    <input type="hidden" name="ChefSocials[1].SocialMediaName" value="Facebook" />
+    <br />
+
+    <label>Instagram</label>
+    <input type="text" name="ChefSocials[2].Url" class="form-control" placeholder="Instagram URL" />
+    <input type="hidden" name="ChefSocials[2].SocialMediaName" value="Instagram" />
+    <br />
+
+    <label>LinkedIn</label>
+    <input type="text" name="ChefSocials[3].Url" class="form-control" placeholder="LinkedIn URL" />
+    <input type="hidden" name="ChefSocials[3].SocialMediaName" value="LinkedIn" />
+    <br />
+
+    <button class="btn btn-primary">Kaydet</button>
+</form>
