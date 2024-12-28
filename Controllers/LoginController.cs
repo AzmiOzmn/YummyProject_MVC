@@ -48,7 +48,7 @@ namespace YummyProject.Controllers
         {
             FormsAuthentication.SignOut();
             Session.Abandon();
-            return RedirectToAction("SignIn");
+            return RedirectToAction("Index","Default");
         }
     }
 }

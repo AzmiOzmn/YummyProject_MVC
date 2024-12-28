@@ -1,0 +1,40 @@
+﻿@model YummyProject.Models.Admin
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Profil Bilgileri Güncelleme Sayfası</h2>
+
+
+
+<form method="post">
+    @Html.HiddenFor(x => x.AdminId)
+
+    <label><img src="@Model.ImageUrl" style="width:100px;height:100px;" /></label>
+    <br />
+    <br />
+    <label>Foto Url</label>
+    @Html.TextAreaFor(a => a.ImageUrl, new { @class = "form-control" })
+    <br />
+    <label>Ad Soyad</label>
+    @Html.TextAreaFor(a => a.NameSurname, new { @class = "form-control" })
+    <br />
+    <label>Kullanıcı Adı</label>
+    @Html.TextAreaFor(a => a.UserName, new { @class = "form-control" })
+    <br />
+    <label>Mevcut Şifre</label>
+    <input type="password" name="currentPassword" class="form-control" />
+    <br />
+    <label>Yeni Şifre</label>
+    @Html.PasswordFor(a => a.Password, new { @class = "form-control" })
+
+    @if (ViewBag.ErrorMessage != null)
+    {
+        <div style="color:red;">@ViewBag.ErrorMessage</div>
+    }
+
+    <br />
+    <button class="btn btn-outline-primary">Güncelle</button>
+</form>

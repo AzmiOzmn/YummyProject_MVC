@@ -1,0 +1,27 @@
+﻿@model YummyProject.Models.Event
+@{
+    ViewBag.Title = "CreateEvent";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Etkinlik Ekle</h2>
+
+<form method="post">
+
+    <label>Foto Url</label>
+    @Html.TextAreaFor(a => a.ImageUrl, new { @class = "form-control" })
+    <br />
+    <label>Başlık</label>
+    @Html.TextAreaFor(a => a.Title, new { @class = "form-control" })
+    <br />
+    <label>Açıklama</label>
+    @Html.TextAreaFor(a => a.Description, new { @class = "form-control" })
+    <br />
+    <label>Fiyat</label>
+    @Html.TextAreaFor(a => a.Price, new { @class = "form-control" })
+    <br />
+    
+
+    <button class="btn btn-primary">Kaydet</button>
+
+</form>

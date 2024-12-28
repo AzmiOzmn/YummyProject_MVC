@@ -1,0 +1,29 @@
+﻿@model YummyProject.Models.Testimonial
+@{
+    ViewBag.Title = "CreateTestimonial";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Referans Ekle</h2>
+
+<form method="post">
+
+    <label>Foto Url</label>
+    @Html.TextAreaFor(a => a.ImageUrl, new { @class = "form-control" })
+    <br />
+    <label>Ad Soyad</label>
+    @Html.TextAreaFor(a => a.NameSurname, new { @class = "form-control" })
+    <br />
+    <label>Ünvan</label>
+    @Html.TextAreaFor(a => a.Title, new { @class = "form-control" })
+    <br />
+    <label>Yorum</label>
+    @Html.TextAreaFor(a => a.Comment, new { @class = "form-control" })
+    <br />
+    <label>Puan</label>
+    @Html.TextAreaFor(a => a.Rating, new { @class = "form-control" })
+    <br />
+
+    <button class="btn btn-primary">Kaydet</button>
+
+</form>
