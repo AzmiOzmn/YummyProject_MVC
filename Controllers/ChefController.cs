@@ -16,7 +16,7 @@ namespace YummyProject.Controllers
             var values = context.Chefs.ToList();
             return View(values);
         }
-         
+          
         public ActionResult CreateChef()
         {
             // Boş bir Chef modeli oluştur ve ChefSocials listesini başlat
