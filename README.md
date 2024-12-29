@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/ffeb35ec-cbd8-485b-a5ee-6f6d2ee2e463)# YummProject
+# YummyProject
 Merhaba, bu proje, MVC mimarisi kullanılarak geliştirilmiş bir restoran yönetim sisteminin web sitesi arayüzü ve admin panelini içermektedir. Kullanıcılar için menü ve restoran bilgilerini görüntüleme imkanı sunulurken, admin paneli sayesinde içerikler dinamik bir şekilde yönetilebilmektedir.  
 
 ---
