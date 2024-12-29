@@ -38,7 +38,7 @@ Aşağıda proje ile ilgili ekran görüntülerini bulabilirsiniz:
 1) **Giriş Paneli**
 ![12](https://github.com/user-attachments/assets/b17c9bfc-cabf-4e50-ad18-b0dc36aba581)
 2) **Dashboard**
-   ![dashboard](https://github.com/user-attachments/assets/7b61f264-8455-4e15-abe4-9893696853fb)
+   ![dashboard](https://github.com/user-attachments/assets/40bf8f4c-1b19-4d20-983f-16d87612bd3f)
 3) **Etkinlikler**
    ![etkinlik](https://github.com/user-attachments/assets/38c24154-b469-48ed-a6d9-c73b714c62ab)
 3) **Şefler**
