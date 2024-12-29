@@ -19,6 +19,7 @@ namespace YummyProject.Controllers
             ViewBag.eventCount = context.Events.Count();
             ViewBag.avgPrice = context.Products.Average(x => x.Price);
             ViewBag.productCount = context.Products.Count();
+            //ViewBag.productCount = context.Products.Count();
             return View();
         }
 
