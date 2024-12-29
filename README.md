@@ -43,7 +43,7 @@ Aşağıda proje ile ilgili ekran görüntülerini bulabilirsiniz:
    ![etkinlik](https://github.com/user-attachments/assets/38c24154-b469-48ed-a6d9-c73b714c62ab)
 3) **Şefler**
    ![şefler](https://github.com/user-attachments/assets/61a2b5b0-bdc8-4665-bd94-561ddfdc2b89)
-4) **Şef EKle**
+4) **Şef Ekle**
    ![şef ekle](https://github.com/user-attachments/assets/bee6ad37-2b6e-4b6f-b09e-5d25b9fae2bd)
 5) **Ürünler**
    ![ürünler](https://github.com/user-attachments/assets/5ebf799a-21c9-4b1b-a97b-9ec4d1d1f6ac)
