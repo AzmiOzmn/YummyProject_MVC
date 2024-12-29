@@ -34,6 +34,7 @@ Admin paneli ile:
 
 ## Görseller  
 Aşağıda proje ile ilgili ekran görüntülerini bulabilirsiniz:  
+
 1) **Giriş Paneli**
 ![12](https://github.com/user-attachments/assets/b17c9bfc-cabf-4e50-ad18-b0dc36aba581)
 2) **Dashboard**
